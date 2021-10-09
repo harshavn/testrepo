@@ -5,6 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/harshavn/testrepo'
             }
         }
         stage('Build') {
