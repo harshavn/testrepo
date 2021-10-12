@@ -1,12 +1,18 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'VERSION', defaultValue: ' ', description:'version to deploy on prod')
-        choice(name: 'VERSION', choices:['1.1.0', '1.2.0', '1.3.0'])
+        choice(name: 'VERSION', choices:['1.1.0', '1.2.0', '1.3.0'], description:'Enter version number')
+        booleanParam(name: 'executeTests', defaultValue: true, descriptio:'')
     }
 
     stages {
         stage('Hello') {
+            when{
+                expression {
+                    params.executeTests 
+                }
+            }
+                
             steps {
                 echo 'Hello World'
                 git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/harshavn/testrepo'
