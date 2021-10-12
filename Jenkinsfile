@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                echo 'Build number %BUILD_NUMBER%
+                echo 'Build number'  %BUILD_NUMBER%
             }
         }
         stage('Deploy') {
