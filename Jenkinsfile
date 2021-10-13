@@ -26,8 +26,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo "Deploying ${VERSION}"
-                touch "sample.txt"
+                echo "Deploying ${VERSION}" > "sample.txt"
+                
             }
         }
         stage('Test') {
