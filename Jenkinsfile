@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying ${VERSION}"
-                touch sample.txt
+                touch "sample.txt"
             }
         }
         stage('Test') {
