@@ -27,11 +27,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying ${VERSION}"
+                touch sample.txt
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing'
+                archiveArtifacts artifacts: 'sample.txt', followSymlinks: false
             }
         }
     }
