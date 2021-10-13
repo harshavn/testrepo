@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Building'
                 echo "Build number $BUILD_NUMBER"
-                sh 'test.sh'
+                
             }
         }
         stage('Deploy') {
@@ -34,7 +34,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
-                archiveArtifacts artifacts: 'sample.txt', followSymlinks: false
+                archiveArtifacts artifacts: 'test.sh', followSymlinks: false
             }
         }
     }
