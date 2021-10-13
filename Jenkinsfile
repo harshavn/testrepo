@@ -34,6 +34,12 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
+                
+            }
+        }
+        stage('Archive') {
+            steps {
+                echo 'Archive'
                 archiveArtifacts artifacts: 'test.sh', followSymlinks: false
             }
         }
