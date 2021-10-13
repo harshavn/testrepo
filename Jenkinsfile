@@ -22,6 +22,7 @@ pipeline {
             steps {
                 echo 'Building'
                 echo "Build number $BUILD_NUMBER"
+                sh 'test.sh'
             }
         }
         stage('Deploy') {
